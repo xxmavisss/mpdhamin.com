@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101010" />
+    <title>SYSTEM_1101</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <canvas id="binary-field" aria-hidden="true"></canvas>
+
+    <main class="screen">
+      <section class="terminal" aria-label="SYSTEM_1101 error screen">
+        <header class="terminal__bar">
+          <span>SYSTEM_1101</span>
+          <span class="window-controls" aria-hidden="true">
+            <i></i><i></i><i></i>
+          </span>
+        </header>
+
+        <div class="terminal__body">
+          <div class="boot-log" aria-label="System reconnection messages">
+            <p><span aria-hidden="true">&gt;&nbsp;</span><span class="typed"></span></p>
+            <p><span aria-hidden="true">&gt;&nbsp;</span><span class="typed"></span></p>
+            <p><span aria-hidden="true">&gt;&nbsp;</span><span class="typed"></span></p>
+            <p><span aria-hidden="true">&gt;&nbsp;</span><span class="typed"></span></p>
+            <p><span aria-hidden="true">&gt;&nbsp;</span><span class="typed"></span></p>
+          </div>
+
+          <div class="error-code" data-text="404">404</div>
+          <h1>PAGE NOT FOUND</h1>
+
+          <div class="cat-divider" aria-hidden="true">
+            <div class="pixel-cat"></div>
+          </div>
+
+          <p class="explanation"><span id="explanation-line-one">CONNECTION LOST.</span><br /><span id="explanation-line-two">RECONNECTING TO THE LAST DANCE.</span></p>
+          <p class="coming-soon">LAST DANCE WITH HAMIN<span class="connection-status" id="connection-status">RECONNECTING...</span></p>
+          <p class="waiting" role="timer" aria-label="Entering the Last Dance in 8 seconds" aria-live="off">[ ENTERING THE LAST DANCE IN <span id="entry-seconds">08</span><span class="cursor">_</span> ]</p>
+        </div>
+      </section>
+    </main>
+    <div class="entry-controls" aria-hidden="true">
+      <div class="entry-progress" aria-hidden="true"><span id="entry-progress-fill"></span></div>
+    </div>
+    <button class="skip-intro" id="skip-intro" type="button" aria-label="Skip introduction and enter Main Hall">SKIP INTRO</button>
+  </body>
+</html>
