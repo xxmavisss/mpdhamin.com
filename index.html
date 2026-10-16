@@ -2647,7 +2647,7 @@ window.addEventListener('resize', () => { if(document.getElementById('view-pass'
    INVITATION LOGIC & LIVE CARD INTERACTION
    ============================================================ */
 const CIPHER_TEXT = "Shall we dance?";
-const X_SHARE_CAPTION = "My invitation to Last Dance with Hamin has arrived. 🖤\n\nShall we dance?\n\n#LastDanceWithHamin";
+const X_SHARE_CAPTION = "Every story begins with an invitation. ✦\nThis one is called Last Dance with Hamin.\n\n#LastDanceWithHamin";
 const passCard = document.getElementById('passCard');
 const passNameInput = document.getElementById('passName');
 const passNameDisplay = document.getElementById('passNameDisplay');
@@ -2811,7 +2811,7 @@ function buildShareLink(){
   params.set('n', name);
   params.set('st', style);
   params.set('sm', String(stampIdx));
-  const base = window.location.origin + window.location.pathname;
+  const base = 'https://mypllidduks.vercel.app/';
   return base + '?' + params.toString();
 }
 
