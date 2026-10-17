@@ -290,11 +290,11 @@ body.motion-ready #view-main.active-view .hero-year{ opacity:0; animation:yearEn
 .digit-slot.is-rolling .digit-glyph.is-incoming{ transform:translate3d(0,0,0); opacity:1; }
 .count-label{ font-size:7px; letter-spacing:.16em; text-transform:uppercase; color:var(--silver-dim); margin-top:7px; }
 
-.main-experiences{ position:relative; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); width:100%; margin:0; padding:0; border-bottom:1px solid rgba(226,231,228,.1); background:#050807; }
+.main-experiences{ position:relative; display:grid; grid-template-columns:minmax(0,1.12fr) minmax(0,.9fr) minmax(0,1.04fr); width:100%; margin:0; padding:0; border-bottom:1px solid rgba(226,231,228,.1); background:#050807; }
 .main-experiences::before{ content:""; position:absolute; z-index:6; left:clamp(24px,4vw,64px); right:clamp(24px,4vw,64px); top:0; height:1px; background:linear-gradient(90deg,rgba(34,166,110,.68),rgba(226,231,228,.14) 42%,transparent 92%); transform:scaleX(.14); transform-origin:left; opacity:.45; transition:transform .9s var(--ease),opacity .9s var(--ease); }
 .main-experiences.is-visible::before{ transform:scaleX(1); opacity:1; }
 .experience-pair{ display:contents; }
-.game-portal,.experience-portal,.bidding-portal{ position:relative; min-height:clamp(350px,30vw,460px); padding:clamp(36px,4.2vw,68px); display:flex; flex-direction:column; justify-content:flex-end; text-align:left; border:0; border-right:1px solid rgba(226,231,228,.09); background:transparent; overflow:hidden; isolation:isolate; }
+.game-portal,.experience-portal{ position:relative; min-height:clamp(350px,30vw,460px); padding:clamp(36px,4.2vw,68px); display:flex; flex-direction:column; justify-content:flex-end; text-align:left; border:0; border-right:1px solid rgba(226,231,228,.09); background:transparent; overflow:hidden; isolation:isolate; }
 .reveal-item{ opacity:0; transform:translateY(14px); transition:opacity .58s ease,transform .58s cubic-bezier(.22,1,.36,1); transition-delay:var(--reveal-delay,0ms); }
 .reveal-item.is-revealed{ opacity:1; transform:none; }
 .experience-portal:last-child{ border-right:0; }
@@ -305,9 +305,9 @@ body.motion-ready #view-main.active-view .hero-year{ opacity:0; animation:yearEn
 .portal-go{ position:relative; display:inline-flex; align-items:center; gap:10px; margin-top:28px; padding-bottom:8px; color:var(--emerald-bright); font-size:9px; letter-spacing:.18em; text-transform:uppercase; transition:color .28s cubic-bezier(.22,1,.36,1),letter-spacing .28s cubic-bezier(.22,1,.36,1); }
 .portal-go::after{ content:""; position:absolute; left:0; right:0; bottom:0; height:1px; background:currentColor; transform:scaleX(.32); transform-origin:left; opacity:.68; transition:transform .3s cubic-bezier(.22,1,.36,1),opacity .3s ease; }
 .portal-go .cta-arrow{ display:inline-block; transition:transform .28s var(--ease); }
-.game-portal:hover .portal-go,.experience-portal:hover .portal-go,.bidding-portal:hover .portal-go{ color:#8ae0bb; letter-spacing:.19em; }
-.game-portal:hover .portal-go::after,.experience-portal:hover .portal-go::after,.bidding-portal:hover .portal-go::after{ transform:scaleX(1); opacity:.9; }
-.game-portal:hover .cta-arrow,.experience-portal:hover .cta-arrow,.bidding-portal:hover .cta-arrow{ transform:translateX(5px); }
+.game-portal:hover .portal-go,.experience-portal:hover .portal-go{ color:#8ae0bb; letter-spacing:.19em; }
+.game-portal:hover .portal-go::after,.experience-portal:hover .portal-go::after{ transform:scaleX(1); opacity:.9; }
+.game-portal:hover .cta-arrow,.experience-portal:hover .cta-arrow{ transform:translateX(5px); }
 .portal-media{ position:absolute; inset:0; z-index:0; pointer-events:none; }
 .game-portal{ background:#040706; color:inherit; cursor:pointer; }
 .game-media{ opacity:.74; background:#050b08; transition:opacity .5s var(--ease); }
@@ -315,8 +315,6 @@ body.motion-ready #view-main.active-view .hero-year{ opacity:0; animation:yearEn
 .game-portal::after{ content:""; position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(90deg,#040706 0 16%,rgba(4,7,6,.46) 49%,#040706 100%),linear-gradient(0deg,#040706 0 6%,transparent 47%,rgba(4,7,6,.78) 100%); }
 .game-portal:hover .game-media{ opacity:.94; }
 .game-portal .portal-go{ color:var(--emerald-bright); }.game-portal .cta-arrow{ display:none; }
-.bidding-portal{ color:inherit; background:linear-gradient(145deg,rgba(13,28,25,.58),rgba(3,6,5,.94)); }
-.bidding-portal .portal-go{ color:var(--emerald-bright); }
 .invitation-portal{ background:linear-gradient(145deg,rgba(9,29,23,.52),rgba(3,6,5,.92)); }
 .invitation-portal::after{ content:""; position:absolute; inset:0; z-index:2; pointer-events:none; background:linear-gradient(90deg,rgba(3,7,5,.96) 0 36%,rgba(3,7,5,.52) 57%,transparent 82%); }
 .invitation-media{ display:grid; place-items:center; opacity:.9; }
@@ -1090,8 +1088,8 @@ body.motion-ready #view-main.active-view .hero-year{ opacity:0; animation:yearEn
   #view-pass .pass-columns{ gap:42px; }
   #view-pass .control-panel{ width:min(560px,100%); margin-inline:auto; }
   #view-pass .preview-stage{ min-height:620px; }
-  .main-experiences{ grid-template-columns:repeat(2,minmax(0,1fr)); }
-  .game-portal{ grid-column:auto; }
+  .main-experiences{ grid-template-columns:1fr 1fr; }
+  .game-portal{ grid-column:1 / -1; }
   .invitation-portal{ border-top:1px solid rgba(226,231,228,.11); }
   .wall-portal{ border-top:1px solid rgba(226,231,228,.11); }
 }
@@ -1118,7 +1116,7 @@ body.motion-ready #view-main.active-view .hero-year{ opacity:0; animation:yearEn
   .count-grid{ max-width:360px; }
   .count-num{ font-size:clamp(1.65rem,8vw,2.2rem); }
   .main-experiences{ grid-template-columns:1fr; }
-  .game-portal,.experience-portal,.bidding-portal{ grid-column:auto; min-height:310px; padding:32px 24px; border-right:0; border-top:1px solid rgba(226,231,228,.11); }
+  .game-portal,.experience-portal{ grid-column:auto; min-height:310px; padding:32px 24px; border-right:0; border-top:1px solid rgba(226,231,228,.11); }
   .game-portal{ border-top:0; }
   .invitation-object{ width:126px; right:8%; top:10%; opacity:.78; }
   .invitation-portal .portal-copy{ max-width:10rem; }
@@ -1712,6 +1710,7 @@ body.motion-ready #view-main.active-view .hero-year{ opacity:0; animation:yearEn
     <button class="nav-link active" data-view="main" aria-current="page">Main Hall</button>
     <a class="nav-link" href="https://mpd-lastdancewhamin-minigame.netlify.app" target="_blank" rel="noopener noreferrer">Game</a>
     <a class="nav-link" href="https://asterumphotobooth.vercel.app" target="_blank" rel="noopener noreferrer">Photobooth</a>
+    <a class="nav-link" href="https://plliplave800-mypllidduks.github.io/standee-bid/" target="_blank" rel="noopener noreferrer">Standee Bidding</a>
     <button class="nav-link" data-view="pass">Invitation</button>
     <button class="nav-link" data-view="wall">Starry Wall</button>
   </nav>
@@ -1823,7 +1822,7 @@ body.motion-ready #view-main.active-view .hero-year{ opacity:0; animation:yearEn
           </figure>
         </div>
         <div class="collection-purchase">
-          <p class="collection-availability" id="donationKitAvailability" aria-live="polite">ONLY 1 SET LEFT ✦</p>
+          <p class="collection-availability" id="donationKitAvailability" aria-live="polite">ONLY ONE SET LEFT ✦</p>
           <a class="collection-buy-link" id="donationKitBuyLink" href="https://forms.gle/nXeTM5pViCh3gvNP7" target="_blank" rel="noopener noreferrer">Get Your Donation Kit ↗</a>
         </div>
       </div>
@@ -1839,15 +1838,6 @@ body.motion-ready #view-main.active-view .hero-year{ opacity:0; animation:yearEn
           <div class="portal-title">Game</div>
           <div class="portal-desc">Step into Hamin's world.</div>
           <div class="portal-go"><span>Press to Play</span></div>
-        </div>
-      </a>
-
-      <a class="bidding-portal" href="https://plliplave800-mypllidduks.github.io/standee-bid/" target="_blank" rel="noopener noreferrer" aria-label="Open Standee Bidding website in a new tab">
-        <div class="portal-copy">
-          <span class="section-index">External Experience</span>
-          <div class="portal-title">Standee Bidding</div>
-          <div class="portal-desc">Visit the official bidding website.</div>
-          <div class="portal-go"><span>Open Website</span></div>
         </div>
       </a>
 
@@ -2243,7 +2233,7 @@ const donationKitSoldOut = false;
 const donationKitAvailability = document.getElementById('donationKitAvailability');
 const donationKitBuyLink = document.getElementById('donationKitBuyLink');
 if(donationKitAvailability && donationKitBuyLink){
-  donationKitAvailability.textContent = donationKitSoldOut ? 'SOLD OUT' : 'ONLY 1 SET LEFT ✦';
+  donationKitAvailability.textContent = donationKitSoldOut ? 'SOLD OUT' : 'ONLY ONE SET LEFT ✦';
   donationKitBuyLink.hidden = donationKitSoldOut;
 }
 
@@ -2530,7 +2520,7 @@ if(!reduceMotion && window.matchMedia('(pointer:fine)').matches){
   document.body.dataset.motionMode = 'static';
 }
 
-const revealItems = Array.from(document.querySelectorAll('.game-portal,.bidding-portal,.invitation-portal,.wall-portal'));
+const revealItems = Array.from(document.querySelectorAll('.game-portal,.invitation-portal,.wall-portal'));
 revealItems.forEach((item,index) => {
   item.classList.add('reveal-item');
   item.style.setProperty('--reveal-delay', `${index * 80}ms`);
